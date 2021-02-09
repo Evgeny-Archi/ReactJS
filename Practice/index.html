@@ -1,66 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Reack Practice</title>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <!-- Don't use this in production: -->
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <style>
-      .car {
-        display: inline-block;
-        border: 1px dashed #ccc;
-        box-shadow: 2px 2px 1px #eee;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React practice</title>
+</head>
+<body>
+  <noscript>You need to enable some wonderful think, such as JavaScript</noscript>
 
-    
+<h2>Add react app fast</h2>
 
-    <script type="text/babel">
+<!-- My first react dom component -->
+<p>
+  First comment
+  <div class="like_btn" data-id="1"></div>
+</p>
+<p>
+  Second comment
+  <div class="like_btn" data-id="2"></div>
+</p>
+<p>
+  Third comment
+  <div class="like_btn" data-id="3"></div>
+</p>
 
-      function Car(props) {
-        return (
-          <div className="car">
-            <h3>{props.name}</h3>
-            <p>
-              Lorem ipsum asdasdasd sit amet.
-              <strong>{props.year}</strong>
-            </p>
-          </div>
-        )
-      }
+<div id="root"></div>
 
-      const App = (
-        <div>
-          <Car name="First car" year="2019" />
-          <Car name="Second car" year="2020" />
-          <Car name="Some car" year="2017" />
-        </div>
-      )
-
-      ReactDOM.render(
-        App,
-        document.getElementById('root')
-      )
-
-    </script>
-    <!--
-      Note: this page is a great way to try React but it's not suitable for production.
-      It slowly compiles JSX with Babel in the browser and uses a large development build of React.
-
-      Read this section for a production-ready setup with JSX:
-      https://reactjs.org/docs/add-react-to-a-website.html#add-jsx-to-a-project
-
-      In a larger project, you can use an integrated toolchain that includes JSX instead:
-      https://reactjs.org/docs/create-a-new-react-app.html
-
-      You can also use React without JSX, in which case you can remove Babel:
-      https://reactjs.org/docs/react-without-jsx.html
-    -->
-  </body>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="component.js"></script>
+  
+</body>
 </html>
