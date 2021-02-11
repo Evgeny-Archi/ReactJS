@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Car from './Car/Car'
 
 function App() {
+  const divStyle = {
+    'border': '1px solid red'
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={divStyle}>
+      <h1>Hello</h1>
+      <Car name={'Ford'} year={2018}>
+        <p style={{color: 'red'}}>Test</p>
+      </Car>
+      <Car name="BMW" year={2020} />
     </div>
   );
 }

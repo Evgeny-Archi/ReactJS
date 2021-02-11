@@ -37,17 +37,34 @@
 //   document.getElementById('root')
 // )
 
-function tick() {
-  const element = (
+// function tick() {
+//   const element = (
+//     <div>
+//       <h1>Time</h1>
+//       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+//     </div>
+//   )
+//   ReactDOM.render(element, document.getElementById('root'))
+// }
+// setInterval(tick, 1000)
+
+function Clock(props) {
+  return (
     <div>
-      <h1>Time</h1>
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+       <h1>Time</h1>
+       <h2>It is {props.date.toLocaleTimeString()}.</h2>
     </div>
   )
-  ReactDOM.render(element, document.getElementById('root'))
+}
+function tick() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root')
+  )
 }
 
 setInterval(tick, 1000)
+
 
 // To minify use: npx terser -c -m -o component.min.js -- component.js
 // To preproc JSX use: npx babel --watch src --out-dir . --presets react-app/prod (src/component.js)

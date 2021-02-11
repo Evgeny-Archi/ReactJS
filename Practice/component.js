@@ -37,8 +37,19 @@
 //   document.getElementById('root')
 // )
 
-function tick() {
-  var element = React.createElement(
+// function tick() {
+//   const element = (
+//     <div>
+//       <h1>Time</h1>
+//       <h2>It is {new Date().toLocaleTimeString()}.</h2>
+//     </div>
+//   )
+//   ReactDOM.render(element, document.getElementById('root'))
+// }
+// setInterval(tick, 1000)
+
+function Clock(props) {
+  return React.createElement(
     'div',
     null,
     React.createElement(
@@ -50,11 +61,13 @@ function tick() {
       'h2',
       null,
       'It is ',
-      new Date().toLocaleTimeString(),
+      props.date.toLocaleTimeString(),
       '.'
     )
   );
-  ReactDOM.render(element, document.getElementById('root'));
+}
+function tick() {
+  ReactDOM.render(React.createElement(Clock, { date: new Date() }), document.getElementById('root'));
 }
 
 setInterval(tick, 1000);
