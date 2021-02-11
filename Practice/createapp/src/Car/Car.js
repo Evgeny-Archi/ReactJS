@@ -25,7 +25,6 @@ const headStyle = {
 
 export default (props) => (
     <div>
-        { props.children }
         <h3 style={headStyle}>Car name: {props.name}</h3> 
         <p>Year: <strong>{props.year}</strong></p>
     </div>

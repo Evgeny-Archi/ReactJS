@@ -48,22 +48,47 @@
 // }
 // setInterval(tick, 1000)
 
-function Clock(props) {
-  return (
-    <div>
-       <h1>Time</h1>
-       <h2>It is {props.date.toLocaleTimeString()}.</h2>
-    </div>
-  )
-}
-function tick() {
-  ReactDOM.render(
-    <Clock date={new Date()} />,
-    document.getElementById('root')
-  )
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+    }
+    componentDidMount() {
+        this.timerId = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+    componentWillUnmount() {
+        clearInterval(this.timerId);
+    }
+    tick() {
+        this.setState({
+            date: new Date()
+        });
+    }
+    render() {
+        return (
+            <div>
+                <h1>Time</h1>
+                <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+                <FoData date={this.state.date} />
+            </div>
+        );
+    }
 }
 
-setInterval(tick, 1000)
+function FoData(props) {
+    return (
+        <h2>New time: {props.date.toLocaleString()}</h2>
+    )
+}
+
+  ReactDOM.render(
+    <Clock />,
+    document.getElementById('root')
+  );
+
 
 
 // To minify use: npx terser -c -m -o component.min.js -- component.js

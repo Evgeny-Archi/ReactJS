@@ -1,20 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
 import Car from './Car/Car'
+import {Component} from 'react'
 
-function App() {
-  const divStyle = {
-    'border': '1px solid red'
-  }
-  return (
-    <div style={divStyle}>
-      <h1>Hello</h1>
-      <Car name={'Ford'} year={2018}>
-        <p style={{color: 'red'}}>Test</p>
-      </Car>
-      <Car name="BMW" year={2020} />
-    </div>
-  );
+class App extends Component {
+    state = {
+        cars: [
+            {name: 'Ford', year: 2018},
+            {name: 'Audi', year: 2015},
+            {name: 'BMW', year: 2020}
+        ],
+        pageTitle: 'React components'
+    }
+
+    render() {
+        const divStyle = {
+            'border': '1px solid red'
+        }
+
+        const cars = this.state.cars
+
+        return (
+            <div style={divStyle}>
+                <h1>{this.state.pageTitle}</h1>
+                <Car name={cars[0].name} year={cars[0].year}/>
+                <Car name={cars[1].name} year={cars[1].year}/>
+                <Car name={cars[2].name} year={cars[2].year}/>
+            </div>
+        )
+    }
 }
 
 export default App;
