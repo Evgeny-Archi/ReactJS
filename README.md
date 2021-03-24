@@ -1,6 +1,6 @@
-# ReactJS
-Learning ReactJS
+## ReactJS
+Изучение ReactJS
 
-## Installed:
+### Installed:
 - **Tersel** to minify js
 - **Babel** to preproc JSX
