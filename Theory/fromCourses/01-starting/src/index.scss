@@ -1,0 +1,31 @@
+$bg: #232840;
+$color: #9ac6c9;
+$links: #f649a7;
+$green: #59df7f;
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: IBM Plex Mono, monospace, serif;
+    font-size: 17px;
+    background: $bg;
+    color: $color;
+    margin: 0;
+    padding: 0;
+}
+#root {
+    max-width: 80%;
+    margin: 100px auto;
+}
+a {
+    color: $links;
+    text-decoration: none;
+}
+a:hover {
+    color: $green;
+}
+h1, h2, h3 {
+    margin: 0;
+}
