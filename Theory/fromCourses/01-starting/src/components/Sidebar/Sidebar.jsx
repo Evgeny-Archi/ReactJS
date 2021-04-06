@@ -1,15 +1,17 @@
 import s from './Sidebar.module.scss'
+import {NavLink} from 'react-router-dom'
 
 function Sidebar() {
     return (
         <aside className={s.sidebar}>
-                <nav className={s.sidebar__nav}>
-                    <a href="/" className={`${s.sidebar__navitem} ${s.active}`}>Profile</a>
-                    <a href="/message" className={s.sidebar__navitem}>Messages</a>
-                    <a href="/news" className={s.sidebar__navitem}>News</a>
-                    <a href="/music" className={s.sidebar__navitem}>Music</a>
-                    <a href="/options" className={s.sidebar__navitem}>Options</a>
-                </nav>
+            <nav className={s.sidebar__nav}>
+                <NavLink exact to="/" className={s.sidebar__navitem} activeClassName={s.active}>Home</NavLink>
+                <NavLink to="/profile" className={s.sidebar__navitem} activeClassName={s.active}>Profile</NavLink>
+                <NavLink to="/dialogs" className={s.sidebar__navitem} activeClassName={s.active}>Messages</NavLink>
+                <NavLink to="/news" className={s.sidebar__navitem}>News</NavLink>
+                <NavLink to="/music" className={s.sidebar__navitem}>Music</NavLink>
+                <NavLink to="/options" className={s.sidebar__navitem}>Options</NavLink>
+            </nav>
         </aside>
     )
 }

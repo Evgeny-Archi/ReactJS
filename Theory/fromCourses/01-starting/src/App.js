@@ -3,19 +3,26 @@ import Header from './components/Header/Header'
 import Sidebar from './components/Sidebar/Sidebar'
 import Profile from './components/Content/Profile/Profile'
 import Dialogs from './components/Content/Dialogs/Dialogs'
+import Main from './components/Content/Main/Main'
 import Footer from './components/Footer/Footer'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-function App() {
+const HomeComponent = () => <Main />
+
+function App(props) {
     return (
+        <Router>
         <div className={s.wrap}>
             <Header />
             <Sidebar />
             <main className={s.content}>
-                {/* <Profile /> */}
-                <Dialogs />
+                <Route exact path='/' component={HomeComponent} />      {/* Можно так */}
+                <Route path='/profile' render={() => <Profile />} />    {/* Или так */}
+                <Route path='/dialogs' render={() => <Dialogs data={props.data} />} />
             </main>
             <Footer />
         </div>
+        </Router>
     )
 }
 

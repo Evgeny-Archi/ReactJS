@@ -7,6 +7,7 @@
     grid-gap: 40px;
 }
 .content {
+    min-height: 70vh;
     grid-row: span 2;
     padding-left: 40px;
     border-left: 1px dashed $color;
