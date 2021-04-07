@@ -7,8 +7,8 @@ import Messages from './Message/Messages'
 // const messagesElements = props.data.messagesData.map(message => <Messages key={message.id} text={message.message} />)
 
 export default function Dialogs(props) {
-    const dialogsData = props.data.dialogsData
-    const messagesData = props.data.messagesData
+    const dialogsData = props.dialogs
+    const messagesData = props.messages
     return (
         <div>
             <Title title="Dialogs" />
