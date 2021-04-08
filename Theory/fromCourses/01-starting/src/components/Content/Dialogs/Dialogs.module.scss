@@ -90,3 +90,11 @@
     color: #6a8c8e;
   }
 }
+.input_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  flex: 1;
+  height: 30px;
+}

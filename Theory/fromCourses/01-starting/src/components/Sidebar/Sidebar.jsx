@@ -1,7 +1,8 @@
 import s from './Sidebar.module.scss'
 import {NavLink} from 'react-router-dom'
+import Friends from './Friends/Friends'
 
-function Sidebar() {
+function Sidebar(props) {
     return (
         <aside className={s.sidebar}>
             <nav className={s.sidebar__nav}>
@@ -12,6 +13,8 @@ function Sidebar() {
                 <NavLink to="/music" className={s.sidebar__navitem}>Music</NavLink>
                 <NavLink to="/options" className={s.sidebar__navitem}>Options</NavLink>
             </nav>
+
+            <Friends state={props.state} />
         </aside>
     )
 }

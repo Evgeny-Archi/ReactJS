@@ -8,7 +8,7 @@ export default function Profile(props) {
         <div>
                 <Title title="Profile" />
                 <Profileinfo />
-                <Posts posts={props.posts} />
+                <Posts posts={props.state.posts} addPost={props.addPost} />
         </div>
     )
 }
