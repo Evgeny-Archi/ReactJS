@@ -1,0 +1,11 @@
+:root {
+    --main-background: #232840;
+    --darken-background: #1c2138;
+    --main-font-color: #9ac6c9;
+    --darken-font-color: #3a475b;
+    --links: #f649a7;
+    --hover-links: #59df7f;
+    --accent-font-color: #fff;
+    --border-line: 1px dashed var(--darken-font-color);
+    --main-paddings: 20px;
+}
