@@ -6,7 +6,8 @@ const state = {
             {id: 1, message: 'First post.', likesCount: 12},
             {id: 2, message: 'Second post.', likesCount: 5},
             {id: 3, message: 'Third post.', likesCount: 0},
-        ]
+        ],
+        newPostText: 'placeholder'
     },
     messages: {
         messages: [
@@ -38,14 +39,20 @@ const state = {
     }
 }
 
-export function addPost(postMessage) {
+export function addPost() {
     const post = {
         id: state.profile.posts.length + 1,
-        message: postMessage,
+        message: state.profile.newPostText,
         likesCount: 0
     }
     state.profile.posts.push(post)
+    state.profile.newPostText = ''
 
+    rerender(state)
+}
+
+export function updateNewPostText(text) {
+    state.profile.newPostText = text
     rerender(state)
 }
 

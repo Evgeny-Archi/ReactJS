@@ -17,7 +17,7 @@ function App(props) {
             <Sidebar state={props.appState.friends} />
             <main className={s.content}>
                 <Route exact path='/' component={HomeComponent} />      {/* Можно так */}
-                <Route path='/profile' render={() => <Profile state={props.appState.profile} addPost={props.addPost} />} />    {/* Или так */}
+                <Route path='/profile' render={() => <Profile state={props.appState.profile} addPost={props.addPost} updateNewPost={props.updateNewPost} />} />    {/* Или так */}
                 <Route path='/dialogs' render={() => <Dialogs state={props.appState.messages} />} />
             </main>
             <Footer />
