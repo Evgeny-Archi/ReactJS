@@ -42,32 +42,32 @@ const store = {
         }
     },
 
-    getState() {
-      return this._state
-    },
-
-    rerenderEntireTree() {
+    _callSubscriber() {
         console.log('no observer')
     },
 
+    getState() {
+        return this._state
+    },
+
     subscribe(observer) {
-        this.rerenderEntireTree = observer
+        this._callSubscriber = observer
     },
 
-    addPost() {
-        const post = {
-            id: this._state.profile.posts.length + 1,
-            message: this._state.profile.newPostText,
-            likesCount: 0
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            const post = {
+                id: this._state.profile.posts.length + 1,
+                message: this._state.profile.newPostText,
+                likesCount: 0
+            }
+            this._state.profile.posts.push(post)
+            this._state.profile.newPostText = ''
+            this._callSubscriber(this._state)
+        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+            this._state.profile.newPostText = action.text
+            this._callSubscriber(this._state)
         }
-        this._state.profile.posts.push(post)
-        this._state.profile.newPostText = ''
-        this.rerenderEntireTree(this._state)
-    },
-
-    updateNewPostText(text) {
-        this._state.profile.newPostText = text
-        this.rerenderEntireTree(this._state)
     }
 }
 

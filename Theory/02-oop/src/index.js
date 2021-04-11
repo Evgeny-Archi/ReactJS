@@ -6,7 +6,7 @@ import store from './state/state'
 
 const rerender = (state) => {
     ReactDOM.render(
-        <App appState={state} addPost={store.addPost.bind(store)} updateNewPost={store.updateNewPostText.bind(store)} />,
+        <App state={state} dispatch={store.dispatch.bind(store)} />,
         document.getElementById('root')
     )
 }
