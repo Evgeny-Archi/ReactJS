@@ -1,4 +1,4 @@
-import {rerender} from "../render"
+let rerender = () => {}
 
 const state = {
     profile: {
@@ -48,12 +48,16 @@ export function addPost() {
     state.profile.posts.push(post)
     state.profile.newPostText = ''
 
-    rerender(state)
+    rerender()
 }
 
 export function updateNewPostText(text) {
     state.profile.newPostText = text
-    rerender(state)
+    rerender()
+}
+
+export function subscribe(observer) {
+    rerender = observer
 }
 
 export default state
