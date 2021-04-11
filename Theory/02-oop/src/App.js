@@ -10,11 +10,12 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 const HomeComponent = () => <Main />
 
 function App(props) {
+    console.log(props)
     return (
         <Router>
         <div className={s.wrap}>
             <Header />
-            <Sidebar state={props.appState.friends} />
+            <Sidebar />
             <main className={s.content}>
                 <Route exact path='/' component={HomeComponent} />      {/* Можно так */}
                 <Route path='/profile' render={() => <Profile state={props.appState.profile} addPost={props.addPost} updateNewPost={props.updateNewPost} />} />    {/* Или так */}

@@ -14,7 +14,7 @@ function Sidebar(props) {
                 <NavLink to="/options" className={s.sidebar__navitem}>Options</NavLink>
             </nav>
 
-            <Friends state={props.state} />
+            {/*<Friends state={props.state} />*/}
         </aside>
     )
 }
