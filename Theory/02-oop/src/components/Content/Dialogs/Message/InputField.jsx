@@ -1,6 +1,6 @@
 import s from './../Dialogs.module.scss'
 import React from 'react'
-import { dialogsInputCreator, addMessageDialogCreator } from './../../../../state/state'
+import { dialogsInputCreator, addMessageDialogCreator } from './../../../../state/dialogs-reducer'
 
 export default function(props) {
 

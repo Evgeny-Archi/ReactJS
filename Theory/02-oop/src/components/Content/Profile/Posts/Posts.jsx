@@ -1,7 +1,7 @@
 import s from './Posts.scss'
 import Post from './Post/Post'
 import React from 'react'
-import { addPostActionCreator, postChangeCreator } from '../../../../state/state'
+import { addPostActionCreator, postChangeCreator } from '../../../../state/profile-reducer'
 
 export default function Posts(props) {
     const postElements = props.state.posts.map(post => <Post key={post.id} message={post.message} />)
