@@ -1,18 +1,18 @@
 import s from './Posts.scss'
 import Post from './Post/Post'
 import React from 'react'
+import { addPostActionCreator, postChangeCreator } from '../../../../state/state'
 
 export default function Posts(props) {
     const postElements = props.state.posts.map(post => <Post key={post.id} message={post.message} />)
-
     const newPostElement = React.createRef()
 
     const addPost = () => {
-        props.dispatch({ type: 'ADD-POST' })
+        props.dispatch(addPostActionCreator())
     }
 
     const onPostChange = () => {
-        props.dispatch({type: 'UPDATE-NEW-POST-TEXT', text: newPostElement.current.value })
+        props.dispatch(postChangeCreator(newPostElement.current.value))
     }
 
     return (

@@ -19,7 +19,7 @@ export default function Dialogs(props) {
                 </div>
                 <div className={s.messages}>
                     { messagesData }
-                    <InputField />
+                    <InputField state={props.state.newMessageText} dispatch={props.dispatch} />
                 </div>
             </div>
         </div>

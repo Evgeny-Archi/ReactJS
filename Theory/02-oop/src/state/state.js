@@ -1,3 +1,7 @@
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
+const UPDATE_NEW_DIALOGS_TEXT = 'UPDATE-NEW-DIALOGS-TEXT'
+const SEND_MESSAGE = 'SEND-MESSAGE'
 
 const store = {
     _state: {
@@ -9,7 +13,7 @@ const store = {
             ],
             newPostText: 'placeholder'
         },
-        messages: {
+        dialogsPage: {
             messages: [
                 {id: 1, message: 'first message'},
                 {id: 2, message: 'second message'},
@@ -31,7 +35,8 @@ const store = {
                 {id: 7, name: 'Aleksandr Korolev'},
                 {id: 8, name: 'Bob Morgan'},
                 {id: 9, name: 'Andrew Cruz'}
-            ]
+            ],
+            newMessageText: ''
         },
         friends: {
             friendsList: [
@@ -55,7 +60,7 @@ const store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
+        if (action.type === ADD_POST) {
             const post = {
                 id: this._state.profile.posts.length + 1,
                 message: this._state.profile.newPostText,
@@ -64,12 +69,38 @@ const store = {
             this._state.profile.posts.push(post)
             this._state.profile.newPostText = ''
             this._callSubscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profile.newPostText = action.text
+            this._callSubscriber(this._state)
+        } else if (action.type === UPDATE_NEW_DIALOGS_TEXT) {
+            this._state.dialogsPage.newMessageText = action.text
+            this._callSubscriber(this._state)
+        } else if (action.type === SEND_MESSAGE) {
+            const message = {
+                id: this._state.dialogsPage.messages.length + 1,
+                message: this._state.dialogsPage.newMessageText
+            }
+            this._state.dialogsPage.messages.push(message)
+            this._state.dialogsPage.newMessageText = ''
             this._callSubscriber(this._state)
         }
     }
 }
+
+export const addPostActionCreator = () => ({
+    type: ADD_POST
+})
+export const postChangeCreator = (text) => ({
+        type: UPDATE_NEW_POST_TEXT,
+        text: text
+})
+export const dialogsInputCreator = (text) => ({
+    type: UPDATE_NEW_DIALOGS_TEXT,
+    text: text
+})
+export const addMessageDialogCreator = () => ({
+    type: SEND_MESSAGE
+})
 
 window.store = store
 export default store

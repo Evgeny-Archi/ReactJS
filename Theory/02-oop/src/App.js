@@ -16,7 +16,7 @@ function App(props) {
             <main className={s.content}>
                 <Route exact path='/' render={ () => <Main /> } />
                 <Route path='/profile' render={() => <Profile state={props.state.profile} dispatch={props.dispatch} />} />
-                <Route path='/dialogs' render={() => <Dialogs state={props.state.messages} />} />
+                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />} />
             </main>
             <Footer />
         </div>
