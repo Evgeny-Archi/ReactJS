@@ -8,6 +8,13 @@ class Car extends React.Component {
         super(props)
 
         this.state = {}
+        this.inputRef = React.createRef()
+    }
+
+    componentDidMount() {
+        if (this.props.index === 0) {
+            this.inputRef.current.focus()
+        }
     }
 
     render() {
@@ -27,6 +34,7 @@ class Car extends React.Component {
                 <h3>Car name: {this.props.name}</h3>
                 <p>Year: {this.props.year}</p>
                 <input
+                    ref={this.inputRef}
                     type="text"
                     onChange={this.props.onChangeName}
                     value={this.props.name}
@@ -41,6 +49,7 @@ class Car extends React.Component {
 Car.propTypes = {
     name: PropTypes.string.isRequired,
     year: PropTypes.number,
+    index: PropTypes.number,
     onChangeName: PropTypes.func,
     onDelete: PropTypes.func
 }
