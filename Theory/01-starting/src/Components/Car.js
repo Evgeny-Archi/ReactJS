@@ -1,36 +1,48 @@
 import React from 'react'
-import './Car.css'
+import classes from './Car.module.css'
+import withClass from './../hoc/withClass'
+import PropTypes from 'prop-types'
 
-const Car = (props) => {
-    const inputClasses = ['input']
-    if (props.name != '') {
-        inputClasses.push('green')
-    } else {
-        inputClasses.push('red')
+class Car extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {}
     }
 
-    if (props.name.length > 4) {
-        inputClasses.push('bold')
-    }
+    render() {
+        const inputClasses = [classes.input]
+        if (this.props.name !== '') {
+            inputClasses.push(classes.green)
+        } else {
+            inputClasses.push(classes.red)
+        }
 
-    const style = {
-        border: '1px solid #ccc',
-        boxShadow: '0 4px 5px 0 rgba(0,0,0, .2)'
-    }
+        if (this.props.name.length > 4) {
+            inputClasses.push(classes.bold)
+        }
 
-    return (
-        <div className='car' style={style}>
-            <h3>Car name: {props.name}</h3>
-            <p>Year: {props.year}</p>
-            <input
-                type="text"
-                onChange={props.onChangeName}
-                value={props.name}
-                className={inputClasses.join(' ')}
-            />
-            <button onClick={props.onDelete}>Delete</button>
-        </div>
-    )
+        return (
+            <React.Fragment>
+                <h3>Car name: {this.props.name}</h3>
+                <p>Year: {this.props.year}</p>
+                <input
+                    type="text"
+                    onChange={this.props.onChangeName}
+                    value={this.props.name}
+                    className={inputClasses.join(' ')}
+                />
+                <button onClick={this.props.onDelete}>Delete</button>
+            </React.Fragment>
+        )
+    }
 }
 
-export default Car
+Car.propTypes = {
+    name: PropTypes.string.isRequired,
+    year: PropTypes.number,
+    onChangeName: PropTypes.func,
+    onDelete: PropTypes.func
+}
+
+export default withClass(Car, classes.car)

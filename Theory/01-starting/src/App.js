@@ -1,15 +1,21 @@
 import React, { Component, useState } from 'react'
 import Car from './Components/Car'
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary'
+import Counter from './Components/Counter'
 
 class App extends Component {
-    state = {
-        cars: [
-            {name: 'Ford', year: '2018'},
-            {name: 'Honda', year: '1990'},
-            {name: 'Mazda', year: '2010'},
-        ],
-        pageTitle: 'Cars title',
-        showCars: false
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cars: [
+                {name: 'Ford', year: 2018},
+                {name: 'Honda', year: 1990},
+                {name: 'Mazda', year: 2010},
+            ],
+            pageTitle: 'Cars title',
+            showCars: false
+        }
     }
 
     toggleCarsHandler() {
@@ -30,7 +36,20 @@ class App extends Component {
         this.setState({cars})
     }
 
+    componentWillMount() {
+        console.log('App will mount')
+    }
+
+    componentDidMount() {
+        console.log('App did mount')
+    }
+
+    shouldComponentUpdate(nextProps, nextState, nextContext) {
+        return this.state.cars.length > 0
+    }
+
     render() {
+        console.log('App render')
         const style = {
             textAlign: 'center'
         }
@@ -39,20 +58,22 @@ class App extends Component {
 
         if (this.state.showCars) {
             cars = this.state.cars.map((car, i) => {
-                    return (
-                        <Car key={i}
-                             name={car.name}
-                             year={car.year}
-                             onChangeName={(event) => this.onChangeName(event.target.value, i)}
-                             onDelete={this.deleteHandler.bind(this, i)}
+                return (
+                    <ErrorBoundary key={i}>
+                        <Car
+                            name={car.name}
+                            year={car.year}
+                            onChangeName={(event) => this.onChangeName(event.target.value, i)}
+                            onDelete={this.deleteHandler.bind(this, i)}
                         />
-                    )
-                })
+                    </ErrorBoundary>)
+            })
         }
 
         return (
             <div style={style}>
-                <h1>{this.state.pageTitle}</h1>
+                <h1>{this.props.title}</h1>
+                <Counter />
                 <hr />
                 <button onClick={this.toggleCarsHandler.bind(this)}>Toggle cars</button>
                 <div style={{padding: 20, maxWidth: 600, margin: '0 auto'}}>
