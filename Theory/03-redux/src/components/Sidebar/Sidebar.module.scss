@@ -1,0 +1,30 @@
+@import '../../vars.scss';
+
+.sidebar {
+    grid-row: span 2;
+    justify-self: end;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+
+        .active:after {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 5px;
+            background: $green;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+
+        &item {
+            margin: 5px 0;
+            position: relative;
+            padding-right: 15px;
+        }
+    }
+}
