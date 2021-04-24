@@ -7,19 +7,19 @@ import Main from './components/Content/Main/Main'
 import Footer from './components/Footer/Footer'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-function App(props) {
+function App() {
     return (
         <Router>
-        <div className={s.wrap}>
-            <Header />
-            <Sidebar />
-            <main className={s.content}>
-                <Route exact path='/' render={ () => <Main /> } />
-                <Route path='/profile' render={() => <Profile state={props.state.profile} dispatch={props.dispatch} />} />
-                <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} dispatch={props.dispatch} />} />
-            </main>
-            <Footer />
-        </div>
+            <div className={s.wrap}>
+                <Header />
+                <Sidebar />
+                <main className={s.content}>
+                    <Route exact path='/' render={ () => <Main /> } />
+                    <Route path='/profile' render={() => <Profile /> } />
+                    <Route path='/dialogs' render={() => <Dialogs /> } />
+                </main>
+                <Footer />
+            </div>
         </Router>
     )
 }

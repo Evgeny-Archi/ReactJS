@@ -1,14 +1,14 @@
 import s from './Profile.module.scss'
-import Posts from './Posts/Posts'
+import PostsContainer from './Posts/PostsContainer'
 import Title from '../Title/Title'
 import Profileinfo from "./Profileinfo/Profileinfo";
 
-export default function Profile(props) {
+export default function Profile() {
     return (
         <div>
-                <Title title="Profile" />
-                <Profileinfo />
-                <Posts state={props.state} dispatch={props.dispatch} />
+            <Title title="Profile" />
+            <Profileinfo />
+            <PostsContainer />
         </div>
     )
 }
