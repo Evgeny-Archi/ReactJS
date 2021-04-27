@@ -4,6 +4,6 @@ import App from './App'
 import './index.scss'
 
 ReactDOM.render(
-        <App title={'props title'} />,
+        <App />,
         document.getElementById('root')
 )
