@@ -1,0 +1,14 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: IBM Plex Mono, monospace, serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+h1, h2, h3 {
+    margin: 0;
+}
