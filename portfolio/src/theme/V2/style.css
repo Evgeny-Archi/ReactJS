@@ -1,0 +1,207 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./fonts/Ubuntu-Light.ttf');
+    url('./fonts/Ubuntu-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('./fonts/Ubuntu-Regular.ttf');
+    url('./fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f8;
+    /*background: #36454f;*/
+    color: #4a4e4d;
+    /*color: #f4f4f8;*/
+    height: 100vh;
+    overflow: hidden;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+.wrap {
+    max-width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50px, 10vh) 1fr minmax(50px, 10vh);
+    min-height: 100%;
+}
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+/* Toggle theme mode */
+.header__toggle-theme {
+    display: flex;
+    align-items: center;
+}
+.theme-mode {
+    visibility: hidden;
+}
+.theme-mode-label {
+    position: relative;
+    display: block;
+    width: 38px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid #d5d5e5;
+    border-radius: 24px;
+    cursor: pointer;
+}
+.theme-mode-btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -8px;
+    background: #d5d5e5;
+    border-radius: 50%;
+    transition: left .2s ease;
+}
+.theme_icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    transform: translate(-50%, -50%);
+}
+.theme_icon.sun {
+    fill: #f6cb49;
+}
+.theme_icon.dark {
+    fill: #d5edff;
+}
+.theme-mode:checked + .theme-mode-label > .theme-mode-btn {
+    left: 14px;
+}
+/* Main */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content {
+    text-align: center;
+    max-height: 80vh;
+    margin-bottom: 20px;
+}
+.nav {
+    margin-bottom: 10px;
+}
+.nav_link {
+    color: #009cff;
+    padding: 0 5px;
+    font-weight: 300;
+}
+.nav_link:hover {
+    color: #fe4a49;
+}
+.title {
+    font-weight: 400;
+    letter-spacing: .1em;
+    pointer-events: none;
+}
+/* Footer */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_contacts {
+    text-decoration: none;
+    padding: 0 10px;
+}
+.contact_icon{
+    width: 26px;
+    height: 26px;
+    fill: #d5d5e5;
+    transition: fill .2s linear;
+}
+.nav_contacts:hover > .contact_icon {
+    fill: #4a4e4d;
+}
+@keyframes logo-animation {
+    0%   { transform: scale(0)      translateX(0); }
+    10%  { transform: scale(.8)     translateX(0); }
+    30%  { transform: scale(1.1,.9)   translateX(-50px); }
+    50%  { transform: scale(.95,1.05) translateX(0); }
+    57%  { transform: scale(1,1)      translateX(-7px); }
+    64%  { transform: scale(1,1)      translateX(0); }
+    100% { transform: scale(1,1)      translateX(0); }
+}
+
+/*}*/
+/*.logo-wrap {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*}*/
+/*.logo-wrap:hover .logo {*/
+/*    display: block;*/
+/*}*/
+/*.logo {*/
+/*    margin-right: 20px;*/
+/*    width: 100px;*/
+/*    height: auto;*/
+/*    display: none;*/
+/*    border-radius: 50%;*/
+/*    position: absolute;*/
+/*    top: -20px;*/
+/*    left: -110px;*/
+/*    animation-name: animate;*/
+/*    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);*/
+/*    animation-duration: 2s;*/
+/*}*/
+/*@keyframes animate {*/
+/*    0%   { transform: scale(0)      translateX(0); }*/
+/*    10%  { transform: scale(.8)     translateX(0); }*/
+/*    30%  { transform: scale(1.1,.9)   translateX(-50px); }*/
+/*    50%  { transform: scale(.95,1.05) translateX(0); }*/
+/*    57%  { transform: scale(1,1)      translateX(-7px); }*/
+/*    64%  { transform: scale(1,1)      translateX(0); }*/
+/*    100% { transform: scale(1,1)      translateX(0); }*/
+/*}*/
+
+/*.title {*/
+/*    font-weight: 400;*/
+/*    letter-spacing: .1em;*/
+/*    pointer-events: none;*/
+/*}*/
+/*.wrap {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    height: 100vh;*/
+/*}*/
+/*a {*/
+/*    color: #009cff;*/
+/*    padding: 0 5px;*/
+/*    font-weight: 300;*/
+/*}*/
+/*a:hover {*/
+/*    color: #fe4a49;*/
+/*}*/
+/*.nav {*/
+/*    margin-bottom: 10px;*/
+/*}*/
