@@ -15,7 +15,7 @@ export const ThemeLabel = styled.label`
     width: 38px;
     height: 20px;
     background: transparent;
-    border: 2px solid #d5d5e5;
+    border: 2px solid ${(props) => props.theme.lightColor};
     border-radius: 24px;
     cursor: pointer;
 `
@@ -26,7 +26,7 @@ export const ThemeSpan = styled.span`
     top: 50%;
     transform: translateY(-50%);
     left: -8px;
-    background: #d5d5e5;
+    background: ${(props) => props.theme.lightColor};
     border-radius: 50%;
     transition: left 0.2s ease;
 `
@@ -37,7 +37,7 @@ export const ThemeSVG = styled.svg`
     width: 16px;
     height: 16px;
     transform: translate(-50%, -50%);
-    fill: ${(props) => (props.ThemeColor ? '#d5edff' : '#f6cb49')};
+    fill: ${(props) => props.theme.colorSVG};
 `
 export const ThemeInput = styled.input`
     visibility: hidden;

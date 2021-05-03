@@ -28,11 +28,6 @@ const Footer = () => {
                     <use xlinkHref={`${icons}#vk`} />
                 </FooterSVG>
             </FooterLink>
-            <FooterLink as="a" href="#" target="_blank" title="Send mail">
-                <FooterSVG>
-                    <use xlinkHref={`${icons}#mail`} />
-                </FooterSVG>
-            </FooterLink>
         </FooterWrap>
     )
 }

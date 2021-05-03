@@ -10,7 +10,7 @@ export const FooterWrap = styled.footer`
 export const FooterSVG = styled.svg`
     width: 26px;
     height: 26px;
-    fill: #d5d5e5;
+    fill: ${(props) => props.theme.lightColor};
     transition: fill 0.2s linear;
 `
 
@@ -19,6 +19,6 @@ export const FooterLink = styled(NavLink)`
     padding: 0 10px;
 
     &:hover > ${FooterSVG} {
-        fill: #4a4e4d;
+        fill: ${(props) => props.theme.accentColor};
     }
 `

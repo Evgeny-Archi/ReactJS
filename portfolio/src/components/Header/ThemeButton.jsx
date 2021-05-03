@@ -1,21 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ThemeInput, ThemeLabel, ThemeSpan, ThemeSVG } from './Header.elements'
 import icons from '../../assets/sprite.svg'
 
-const ThemeButton = ({ light }) => {
-    const [themeBtn, toggleTheme] = useState(light)
-
-    const changeTheme = () => {
-        toggleTheme(!themeBtn)
-    }
-
+const ThemeButton = ({ theme, toggleTheme }) => {
     return (
         <>
-            <ThemeInput type="checkbox" id="theme-mode" onChange={changeTheme} />
+            <ThemeInput type="checkbox" id="theme-mode" onChange={toggleTheme} />
             <ThemeLabel htmlFor="theme-mode">
                 <ThemeSpan>
-                    <ThemeSVG ThemeColor={themeBtn}>
-                        {themeBtn ? (
+                    <ThemeSVG>
+                        {theme === 'light' ? (
                             <use xlinkHref={`${icons}#theme_moon`} />
                         ) : (
                             <use xlinkHref={`${icons}#theme_sun`} />

@@ -2,11 +2,11 @@ import React from 'react'
 import { HeaderWrap, ToggleThemeDiv } from './Header.elements'
 import ThemeButton from './ThemeButton'
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
     return (
         <HeaderWrap>
             <ToggleThemeDiv>
-                <ThemeButton light />
+                <ThemeButton theme={theme} toggleTheme={toggleTheme} />
             </ToggleThemeDiv>
         </HeaderWrap>
     )
