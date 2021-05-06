@@ -4,6 +4,7 @@
 
 ### Что изучил
 
-* ООП
+* Redux
+* React-redux
 
-`основы ООП в react`
+`основы Redux`
