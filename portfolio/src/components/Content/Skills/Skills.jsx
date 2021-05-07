@@ -1,13 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
+import { Wrap } from './Skills.elements'
 
-const Skills = () => {
-    const Wrap = styled.div`
-        color: red;
-    `
+const Skills = (props) => {
     return (
-        <Wrap>
-            <h2>Skills</h2>
+        <Wrap initial="initial" animate="in" exit="out" variants={props.pageVariants}>
+            <div>
+                <h2>Skills</h2>
+            </div>
         </Wrap>
     )
 }

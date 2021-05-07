@@ -23,8 +23,8 @@ const App = () => {
     const logoConfig = {
         display: isAvatar || !slideOnTop ? 'block' : 'none',
         width: slideOnTop ? '100px' : '50px',
-        top: slideOnTop ? 'calc(50% - 50px)' : '10px',
-        left: slideOnTop ? 'calc(50% - 280px)' : '0',
+        top: slideOnTop,
+        left: slideOnTop,
         animation: slideOnTop,
     }
 
@@ -38,8 +38,8 @@ const App = () => {
                 <Logo
                     src={logo}
                     alt="Avatar"
-                    {...logoConfig}
                     style={{ display: logoConfig.display }}
+                    {...logoConfig}
                 />
             </div>
         </ThemeProvider>

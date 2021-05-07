@@ -4,6 +4,7 @@ export const HeaderWrap = styled.header`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 0 20px;
 `
 export const ToggleThemeDiv = styled.div`
     display: flex;
