@@ -11,7 +11,10 @@ function Sidebar(props) {
                 <NavLink to="/dialogs" className={s.sidebar__navitem} activeClassName={s.active}>Dialogs</NavLink>
                 <NavLink to="/news" className={s.sidebar__navitem}>News</NavLink>
                 <NavLink to="/music" className={s.sidebar__navitem}>Music</NavLink>
-                <NavLink to="/options" className={s.sidebar__navitem}>Options</NavLink>
+                <br />
+                <NavLink to="/users" className={s.sidebar__navitem}>Find users</NavLink>
+                <br />
+                <NavLink to="/options" className={s.sidebar__navitem}>Settings</NavLink>
             </nav>
 
             {/*<Friends state={props.state} />*/}

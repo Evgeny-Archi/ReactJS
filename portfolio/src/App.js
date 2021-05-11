@@ -31,16 +31,18 @@ const App = () => {
     return (
         <ThemeProvider theme={themeMode}>
             <GlobalStyle />
-            <div className="grid">
-                <Header theme={theme} toggleTheme={themeToggler} />
-                <Content slideOnTop={slideOnTop} showAvatar={showAvatar} />
-                <Footer />
-                <Logo
-                    src={logo}
-                    alt="Avatar"
-                    style={{ display: logoConfig.display }}
-                    {...logoConfig}
-                />
+            <div className="contentWrapper">
+                <div className="grid">
+                    <Header theme={theme} toggleTheme={themeToggler} />
+                    <Content slideOnTop={slideOnTop} showAvatar={showAvatar} />
+                    <Footer />
+                    <Logo
+                        src={logo}
+                        alt="Avatar"
+                        style={{ display: logoConfig.display }}
+                        {...logoConfig}
+                    />
+                </div>
             </div>
         </ThemeProvider>
     )

@@ -6,14 +6,16 @@ export const lightTheme = {
     accentColor: '#4a4e4d',
     linkColor: '#009cff',
     linkHover: '#fe4a49',
+    cardBg: '#8c8c8e',
 }
 
 export const darkTheme = {
-    body: '#36454f',
+    body: '#434e54',
     color: '#f4f4f8',
     colorSVG: '#f6cb49',
     lightColor: '#536571',
     accentColor: '#f4f4f8',
     linkColor: '#539bf5',
     linkHover: '#f55353',
+    cardBg: '#3e4346',
 }

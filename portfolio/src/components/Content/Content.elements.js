@@ -4,18 +4,17 @@ import { NavLink } from 'react-router-dom'
 export const Main = styled.main`
     display: flex;
     justify-content: center;
-    position: relative;
-    padding-top: 80px;
 `
 export const ContentWrap = styled.div`
     text-align: center;
     height: 100%;
     width: 100%;
+    padding: 60px 0 20px 0;
 `
 
 export const Header = styled.div`
     position: absolute;
-    top: ${(props) => (props.position ? '50%' : '5vh')};
+    top: ${(props) => (props.position ? '50%' : '10vh')};
     left: 50%;
     transform: translate(-50%, -50%);
     transition: top 0.3s ease;

@@ -28,10 +28,10 @@ class App extends React.Component {
                     }} activeClassName={classes.active}>About</NavLink>
                 </nav>
 
-                <div style={{border: '1px solid #ccc'}}>
-                    <h2>Logged in: {this.state.isLogIn ? 'true' : 'false'}</h2>
-                    <button onClick={() => this.setState({isLogIn: true})}>Log in</button>
-                </div>
+                {/*<div style={{border: '1px solid #ccc'}}>*/}
+                {/*    <h2>Logged in: {this.state.isLogIn ? 'true' : 'false'}</h2>*/}
+                {/*    <button onClick={() => this.setState({isLogIn: true})}>Log in</button>*/}
+                {/*</div>*/}
 
                 <Switch>
                     <Route exact path='/' render={() => <h1>Home page</h1>} />

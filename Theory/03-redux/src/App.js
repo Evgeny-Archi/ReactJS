@@ -5,6 +5,7 @@ import Profile from './components/Content/Profile/Profile'
 import DialogsContainer from './components/Content/Dialogs/DialogsContainer'
 import Main from './components/Content/Main/Main'
 import Footer from './components/Footer/Footer'
+import Users from './components/Content/Users/Users'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                     <Route exact path='/' render={ () => <Main /> } />
                     <Route path='/profile' render={() => <Profile /> } />
                     <Route path='/dialogs' render={() => <DialogsContainer /> } />
+                    <Route path='/users' render={() => <Users />} />
                 </main>
                 <Footer />
             </div>

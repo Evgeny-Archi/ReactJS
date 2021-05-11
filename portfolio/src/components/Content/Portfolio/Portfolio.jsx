@@ -1,7 +1,25 @@
 import React from 'react'
-import { useAnimation } from 'framer-motion'
-import { Wrap, Body, Item, Title, Text } from './Portfolio.elements'
-import portfolio from '../../../db.json'
+import { useAnimation, AnimateSharedLayout, AnimatePresence } from 'framer-motion'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import List from './List'
+import Item from './Item'
+import { Wrap } from './Portfolio.elements'
+
+const Store = ({ match }) => {
+    const { id } = match.params
+    const [count, setCount] = React.useState(0)
+
+    const handlerForceUpdate = () => {
+        setCount(count + 1)
+    }
+
+    return (
+        <>
+            <List selectedId={id} forceUpdate={handlerForceUpdate} />
+            <AnimatePresence>{id && <Item id={id} key="item" />}</AnimatePresence>
+        </>
+    )
+}
 
 const Portfolio = (props) => {
     const controls = useAnimation()
@@ -13,21 +31,12 @@ const Portfolio = (props) => {
     })
 
     return (
-        <Wrap
-            initial="initial"
-            animate="in"
-            exit="out"
-            variants={props.pageVariants}
-            animate={controls}>
-            <Body>
-                {portfolio.map((item) => (
-                    <Item bg={item.imageUrl} key={item.id}>
-                        <Title>{item.title}</Title>
-                        <br />
-                        <Text>{item.description}</Text>
-                    </Item>
-                ))}
-            </Body>
+        <Wrap initial="initial" exit="out" variants={props.pageVariants} animate={controls}>
+            <AnimateSharedLayout type="crossfade">
+                <Router>
+                    <Route path={['/portfolio/:id', '/portfolio']} component={Store} />
+                </Router>
+            </AnimateSharedLayout>
         </Wrap>
     )
 }

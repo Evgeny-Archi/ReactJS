@@ -1,50 +1,92 @@
 [
     {
-        "id": 0,
+        "id": "0",
         "title": "Mim Theme",
         "description": "Simple HTML 5 and CSS 3 layout.",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Mim-Theme/master/mim.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/Mim-Theme",
-        "previewUrl": "https://evgeny-archi.github.io/Mim-Theme/"
+        "previewUrl": "https://evgeny-archi.github.io/Mim-Theme/",
+        "usage": ["HTML", "CSS"]
     },
     {
-        "id": 1,
+        "id": "1",
         "title": "Bodo Theme",
         "description": "Simple HTML 5 and CSS 3 layout.",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Bodo-Theme/master/bodo.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/Bodo-Theme",
-        "previewUrl": "https://evgeny-archi.github.io/Bodo-Theme/"
+        "previewUrl": "https://evgeny-archi.github.io/Bodo-Theme/",
+        "usage": ["HTML", "CSS"]
     },
     {
-        "id": 2,
+        "id": "2",
         "title": "Imperfect Theme",
         "description": "Simple HTML 5 and CSS 3 layout.",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Imperfect-Theme/master/imperfect.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/Imperfect-Theme",
-        "previewUrl": "https://evgeny-archi.github.io/Imperfect-Theme/"
+        "previewUrl": "https://evgeny-archi.github.io/Imperfect-Theme/",
+        "usage": ["HTML", "CSS"]
     },
     {
-        "id": 3,
+        "id": "3",
         "title": "Fitfloss Theme",
         "description": "Simple HTML 5 and CSS 3 layout.",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Fitfloss-Theme/master/fitfloss.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/Fitfloss-Theme",
-        "previewUrl": "https://evgeny-archi.github.io/Fitfloss-Theme/"
+        "previewUrl": "https://evgeny-archi.github.io/Fitfloss-Theme/",
+        "usage": ["HTML", "CSS"]
     },
     {
-        "id": 4,
+        "id": "4",
         "title": "Next Theme",
         "description": "Simple HTML 5 and CSS 3 layout build on webpack",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Next/master/next.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/Next",
-        "previewUrl": "https://evgeny-archi.github.io/Next/dist/index.html"
+        "previewUrl": "https://evgeny-archi.github.io/Next/dist/index.html",
+        "usage": ["HTML", "CSS", "Webpack"]
     },
     {
-        "id": 5,
+        "id": "5",
         "title": "Slider on JS",
         "description": "Slider on JS with options",
         "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/LearnJS-2.0/master/Slider/slider.webp",
         "codeUrl": "https://github.com/Evgeny-Archi/LearnJS-2.0/tree/master/Slider",
-        "previewUrl": "https://evgeny-archi.github.io/LearnJS-2.0/Slider/public/index.html"
+        "previewUrl": "https://evgeny-archi.github.io/LearnJS-2.0/Slider/public/index.html",
+        "usage": ["HTML", "CSS", "JS"]
+    },
+    {
+        "id": "6",
+        "title": "Table sort",
+        "description": "Sorting table on pure JS",
+        "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/LearnJS-2.0/master/TableSort/tablesort.webp",
+        "codeUrl": "https://github.com/Evgeny-Archi/LearnJS-2.0/tree/master/TableSort",
+        "previewUrl": "https://evgeny-archi.github.io/LearnJS-2.0/TableSort/dist/index.html",
+        "usage": ["HTML", "CSS", "JS"]
+    },
+    {
+        "id": "7",
+        "title": "Next Theme",
+        "description": "Simple HTML 5 and CSS 3 layout build on webpack",
+        "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/Next/master/next.webp",
+        "codeUrl": "https://github.com/Evgeny-Archi/Next",
+        "previewUrl": "https://evgeny-archi.github.io/Next/dist/index.html",
+        "usage": ["HTML", "CSS", "Webpack"]
+    },
+    {
+        "id": "8",
+        "title": "Slider on JS",
+        "description": "Slider on JS with options",
+        "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/LearnJS-2.0/master/Slider/slider.webp",
+        "codeUrl": "https://github.com/Evgeny-Archi/LearnJS-2.0/tree/master/Slider",
+        "previewUrl": "https://evgeny-archi.github.io/LearnJS-2.0/Slider/public/index.html",
+        "usage": ["HTML", "CSS", "JS"]
+    },
+    {
+        "id": "9",
+        "title": "Table sort",
+        "description": "Sorting table on pure JS",
+        "imageUrl": "https://raw.githubusercontent.com/Evgeny-Archi/LearnJS-2.0/master/TableSort/tablesort.webp",
+        "codeUrl": "https://github.com/Evgeny-Archi/LearnJS-2.0/tree/master/TableSort",
+        "previewUrl": "https://evgeny-archi.github.io/LearnJS-2.0/TableSort/dist/index.html",
+        "usage": ["HTML", "CSS", "JS"]
     }
 ]

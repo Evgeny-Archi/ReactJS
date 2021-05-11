@@ -14,17 +14,18 @@ const GlobalStyle = createGlobalStyle`
     background: ${(props) => props.theme.body};
     color: ${(props) => props.theme.color};
     height: 100vh;
-    overflow: hidden;
     transition: all .3s linear;
   }
   #root {
-    max-width: 80%;
-    margin: 0 auto;
+    width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+  .contentWrapper {
+    margin: 0 10%;
+    height: 100%;
 
     @media screen and (max-width: 1024px) {
-      max-width: 100%;
       margin: 0 5%;
     }
   }
@@ -48,6 +49,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
 `
 
 export default GlobalStyle
