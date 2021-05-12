@@ -4,20 +4,17 @@ import { motion } from 'framer-motion'
 
 export const Wrap = styled(motion.div)`
     height: 100%;
-    padding: 20px 5% 20px 5%;
 `
 
 export const Body = styled(motion.div)`
+    position: absolute;
+    width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(${(props) => props.gridColumns}, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-gap: 40px;
-
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-    }
+    padding: 20px 5% 20px 5%;
 `
 
 export const CardItem = styled.div`
@@ -66,6 +63,10 @@ export const TitleContainer = styled(motion.div)`
         box-shadow: -2px 5px 10px rgba(78, 78, 77, 0.8);
         font-size: 1.4em;
         margin-bottom: 10px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.2em;
+        }
     }
     span {
         display: inline-block;
@@ -84,6 +85,14 @@ export const CardImage = styled.img`
     @media screen and (max-width: 1024px) {
         width: auto;
     }
+
+    @media screen and (max-width: 768px) {
+        width: 180%;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 260%;
+    }
 `
 
 export const CardContentContainer = styled(motion.div)`
@@ -92,34 +101,47 @@ export const CardContentContainer = styled(motion.div)`
     position: relative;
     display: block;
     pointer-events: none;
+`
 
-    &.open {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
+/* Opened card */
+export const OpenedCardContentContainer = styled(CardContentContainer)`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+`
+export const OpenedCardContent = styled(CardContent)`
+    height: auto;
+    max-width: 40vw;
+    overflow: hidden;
 
-        ${CardContent} {
-            height: auto;
-            max-width: 40vw;
-            overflow: hidden;
-        }
-        ${CardImageContainer} {
-            z-index: 1;
-        }
-        ${TitleContainer} {
-            top: 60%;
-            right: 0;
-            z-index: 1;
-        }
+    @media screen and (max-width: 1024px) {
+        max-width: 65vw;
     }
+
+    @media screen and (max-width: 500px) {
+        max-width: 85vw;
+    }
+`
+export const OpenedCardImageContainer = styled(CardImageContainer)`
+    z-index: 1;
+`
+export const OpenedTitleContainer = styled(TitleContainer)`
+    top: 60%;
+    right: 0;
+    z-index: 1;
 `
 
 export const CardFooter = styled(motion.div)`
     padding-top: 450px;
     width: 100%;
+
+    @media screen and (max-width: 500px) {
+        padding-top: 400px;
+    }
 `
+/* --- */
 
 export const Usage = styled.div`
     text-align: right;
@@ -207,7 +229,10 @@ export const CloseLink = styled(Link)`
 `
 
 export const PaginateButtons = styled.div`
-    margin-top: 20px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
 `
 
 export const PaginateBtn = styled.button`
@@ -229,4 +254,21 @@ export const PaginateBtn = styled.button`
         width: 30px;
         background: ${(props) => props.theme.accentColor};
     }
+`
+
+export const CloseButtonWrap = styled(motion.div)`
+    position: absolute;
+    top: 10px;
+    right: 0;
+    z-index: 2;
+`
+
+export const CloseButton = styled(Link)`
+    display: inline-block;
+    padding: 0 10px 2px 10px;
+    background: rgba(78, 78, 77, 0.6);
+    color: #f4f4f8;
+    font-size: 2.4em;
+    box-shadow: -2px 5px 10px rgba(78, 78, 77, 0.6);
+    text-decoration: none;
 `

@@ -7,15 +7,10 @@ import { Wrap } from './Portfolio.elements'
 
 const Store = ({ match }) => {
     const { id } = match.params
-    const [count, setCount] = React.useState(0)
-
-    const handlerForceUpdate = () => {
-        setCount(count + 1)
-    }
 
     return (
         <>
-            <List selectedId={id} forceUpdate={handlerForceUpdate} />
+            <List selectedId={id} />
             <AnimatePresence>{id && <Item id={id} key="item" />}</AnimatePresence>
         </>
     )

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
+import SwipeHOC from './SwipeHOC'
 import {
-    Body,
     CardItem,
     CardContentContainer,
     CardContent,
@@ -10,7 +10,6 @@ import {
     CardImage,
 } from './Portfolio.elements'
 import portfolio from '../../../db.json'
-import Pagination from './Pagination'
 
 const Card = ({ id, title, description, imageUrl }) => {
     return (
@@ -32,39 +31,35 @@ const Card = ({ id, title, description, imageUrl }) => {
     )
 }
 
-const List = ({ selectedId, forceUpdate }) => {
-    const gridColumns = 3
-    const gridRows = 2
-    const [itemsPerPage] = useState(gridColumns * gridRows)
-    const [currentPage, setCurrentPage] = useState(1)
+const List = ({ selectedId }) => {
+    const userWidth = window.innerWidth
 
-    const indexOfLastItem = currentPage * itemsPerPage
+    let gridColumns = 3
+    if (userWidth <= 1024 && userWidth > 500) {
+        gridColumns = 2
+    } else if (userWidth <= 500) {
+        gridColumns = 1
+    }
+
+    const [itemsPerPage] = useState(gridColumns * 2)
+    const [[currentPage, direction], setCurrentPage] = useState([0, 0])
+
+    const indexOfLastItem = (currentPage + 1) * itemsPerPage
     const indexOfFirstItem = indexOfLastItem - itemsPerPage
     const currentItems = portfolio.slice(indexOfFirstItem, indexOfLastItem)
 
-    const pagination = (number) => {
-        setCurrentPage(number)
-        forceUpdate()
-    }
-
     return (
-        <>
-            <Body
-                gridColumns={gridColumns}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={() => pagination(2)}>
-                {currentItems.map((card) => (
-                    <Card key={card.id} {...card} isSelected={card.id === selectedId} />
-                ))}
-            </Body>
-            <Pagination
-                totalPortfolioItems={portfolio.length}
-                itemsPerPage={itemsPerPage}
-                pagination={pagination}
-                currentPage={currentPage}
-            />
-        </>
+        <SwipeHOC
+            gridColumns={gridColumns}
+            currentPage={currentPage}
+            direction={direction}
+            setCurrentPage={setCurrentPage}
+            itemsPerPage={itemsPerPage}
+            portfolioLength={portfolio.length}>
+            {currentItems.map((card) => (
+                <Card key={card.id} {...card} isSelected={card.id === selectedId} />
+            ))}
+        </SwipeHOC>
     )
 }
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { PaginateButtons, PaginateBtn } from './Portfolio.elements'
 
-const Pagination = ({ totalPortfolioItems, itemsPerPage, pagination, currentPage }) => {
+const Pagination = ({ totalPortfolioItems, itemsPerPage, currentPage, paginate }) => {
     const pages = []
 
-    for (let i = 1; i <= Math.ceil(totalPortfolioItems / itemsPerPage); i++) {
+    for (let i = 0; i < Math.ceil(totalPortfolioItems / itemsPerPage); i++) {
         pages.push(i)
     }
 
@@ -13,7 +13,7 @@ const Pagination = ({ totalPortfolioItems, itemsPerPage, pagination, currentPage
             {pages.map((number) => (
                 <PaginateBtn
                     key={number}
-                    onClick={() => pagination(number)}
+                    onClick={() => paginate(number)}
                     className={number === currentPage ? 'active' : ''}></PaginateBtn>
             ))}
         </PaginateButtons>

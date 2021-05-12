@@ -3,7 +3,6 @@ import portfolio from '../../../db.json'
 import {
     Overlay,
     CloseLink,
-    CardContentContainer,
     CardContent,
     CardFooter,
     Usage,
@@ -12,6 +11,12 @@ import {
     TitleContainer,
     Buttons,
     Button,
+    OpenedCardContentContainer,
+    OpenedCardContent,
+    OpenedCardImageContainer,
+    OpenedTitleContainer,
+    CloseButtonWrap,
+    CloseButton,
 } from './Portfolio.elements'
 
 const Item = ({ id }) => {
@@ -30,16 +35,16 @@ const Item = ({ id }) => {
                 <CloseLink to="/portfolio" />
             </Overlay>
 
-            <CardContentContainer className="open">
-                <CardContent layoutId={`${CardContent}-${id}`}>
-                    <CardImageContainer layoutId={`${CardImageContainer}-${id}`}>
+            <OpenedCardContentContainer>
+                <OpenedCardContent layoutId={`${CardContent}-${id}`}>
+                    <OpenedCardImageContainer layoutId={`${CardImageContainer}-${id}`}>
                         <CardImage src={imageUrl} alt={`${title} thumbnail`} />
-                    </CardImageContainer>
-                    <TitleContainer layoutId={`${TitleContainer}-${id}`}>
+                    </OpenedCardImageContainer>
+                    <OpenedTitleContainer layoutId={`${TitleContainer}-${id}`}>
                         <h2>{title}</h2>
                         <br />
                         <span>{description}</span>
-                    </TitleContainer>
+                    </OpenedTitleContainer>
                     <CardFooter>
                         <Usage>
                             {usage.map((item, i) => (
@@ -47,16 +52,30 @@ const Item = ({ id }) => {
                             ))}
                         </Usage>
                         <Buttons>
-                            <Button href={codeUrl} data-content="Code" target="_bllank">
-                                <span>Code</span>
-                            </Button>
+                            {codeUrl ? (
+                                <Button href={codeUrl} data-content="Code" target="_bllank">
+                                    <span>Code</span>
+                                </Button>
+                            ) : (
+                                <Button
+                                    href="#"
+                                    data-content="Code"
+                                    onClick={(e) => e.preventDefault()}>
+                                    <span>Code</span>
+                                </Button>
+                            )}
                             <Button href={previewUrl} data-content="Demo" target="_bllank">
                                 <span>Demo</span>
                             </Button>
                         </Buttons>
                     </CardFooter>
-                </CardContent>
-            </CardContentContainer>
+                    <CloseButtonWrap
+                        exit={{ opacity: 0, y: '-100%' }}
+                        transition={{ duration: 0.4 }}>
+                        <CloseButton to="/portfolio">&times;</CloseButton>
+                    </CloseButtonWrap>
+                </OpenedCardContent>
+            </OpenedCardContentContainer>
         </>
     )
 }

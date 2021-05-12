@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 10%;
     height: 100%;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1440px) {
       margin: 0 5%;
     }
   }
