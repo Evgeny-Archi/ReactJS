@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { motion } from 'framer-motion'
 
 export const Wrap = styled(motion.div)`
@@ -10,6 +10,7 @@ export const Wrap = styled(motion.div)`
 
 export const SkillsContent = styled.div`
     height: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -17,14 +18,39 @@ export const SkillsContent = styled.div`
 `
 
 export const SkillsIcons = styled.div`
-    width: 30vw;
+    width: 60%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     position: relative;
+`
 
-    @media screen and (max-width: 500px) {
-        width: 50%;
+const fade = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+export const IconsWrap = styled.div`
+    &:after {
+        content: attr(data-id);
+        display: none;
+        padding: 5px 15px;
+        position: absolute;
+        bottom: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: ${(props) => props.color};
+        color: #fff;
+        border-radius: 6px;
+        animation: ${fade} 0.6s ease;
+    }
+
+    &:hover:after {
+        display: block;
     }
 `
 
@@ -32,6 +58,7 @@ export const SkillsSVG = styled.svg`
     width: 100px;
     height: 100px;
     padding: 5px;
+    margin: 0 10px;
     fill: ${(props) => props.theme.lightColor};
     fill-opacity: 0.6;
     transition: fill-opacity 0.3s ease;
@@ -43,22 +70,17 @@ export const SkillsSVG = styled.svg`
         `}
 
     &:hover {
-        fill-opacity: 0.8;
+        fill-opacity: 1;
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 420px) {
         width: 60px;
         height: 60px;
     }
 `
 
-export const Tooltip = styled.div`
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 200px;
-    background: ${(props) => props.theme.lightColor};
-    color: ${(props) => props.theme.color};
-    line-height: 30px;
+export const Footer = styled.div`
+    width: 30%;
+    padding-top: 30px;
+    border-top: 1px dashed ${(props) => props.theme.lightColor};
 `
