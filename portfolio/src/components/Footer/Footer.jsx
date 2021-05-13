@@ -9,6 +9,7 @@ const Footer = () => {
                 as="a"
                 href="https://github.com/Evgeny-Archi/"
                 target="_blank"
+                rel="noreferrer"
                 title="github.com">
                 <FooterSVG>
                     <use xlinkHref={`${icons}#github`} />
@@ -18,12 +19,18 @@ const Footer = () => {
                 as="a"
                 href="https://www.instagram.com/evgeny.off/"
                 target="_blank"
+                rel="noreferrer"
                 title="instagram.com">
                 <FooterSVG>
                     <use xlinkHref={`${icons}#instagram`} />
                 </FooterSVG>
             </FooterLink>
-            <FooterLink as="a" href="https://vk.com/e.archibasov" target="_blank" title="vk.com">
+            <FooterLink
+                as="a"
+                href="https://vk.com/e.archibasov"
+                target="_blank"
+                rel="noreferrer"
+                title="vk.com">
                 <FooterSVG>
                     <use xlinkHref={`${icons}#vk`} />
                 </FooterSVG>

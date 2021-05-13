@@ -19,14 +19,14 @@ export const Header = styled.div`
     transform: translate(-50%, -50%);
     transition: top 0.3s ease;
     width: 100%;
+
+    @media screen and (max-width: 500px) {
+        top: ${(props) => (props.position ? '50%' : '14vh')};
+    }
 `
 
 export const Navbar = styled.nav`
     margin-bottom: 10px;
-
-    @media screen and (max-width: 768px) {
-        margin-bottom: 20px;
-    }
 `
 
 export const NavbarLink = styled(NavLink)`
