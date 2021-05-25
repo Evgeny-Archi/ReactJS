@@ -1,0 +1,7 @@
+.form_wrap {
+    padding: 10px;
+}
+.form {
+    display: flex;
+    justify-content: space-between;
+}

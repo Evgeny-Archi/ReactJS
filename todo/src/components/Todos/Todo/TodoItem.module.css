@@ -1,0 +1,11 @@
+.todo_item {
+    height: 40px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+.todo_item:last-child {
+    border-bottom: none;
+}
